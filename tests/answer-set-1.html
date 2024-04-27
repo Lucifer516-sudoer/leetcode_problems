@@ -1,0 +1,175 @@
+<h1 id="part-a">Part - A</h1>
+<ol>
+<li><p><strong>Purpose of Using Enumeration in C:</strong>
+Enumeration in C is used to define a set of named integer constants. This helps improve code readability and maintainability. The syntax for defining an enumeration is as follows:</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">enum_name</span> { <span class="hljs-title">constant1</span>, <span class="hljs-title">constant2</span>, <span class="hljs-title">constant3</span>, ... };</span>
+</code></pre>
+<p>For example:</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Days</span> { <span class="hljs-title">Monday</span>, <span class="hljs-title">Tuesday</span>, <span class="hljs-title">Wednesday</span>, <span class="hljs-title">Thursday</span>, <span class="hljs-title">Friday</span>, <span class="hljs-title">Saturday</span>, <span class="hljs-title">Sunday</span> };</span>
+</code></pre>
+</li>
+<li><p><strong>Precedence of Operators in C:</strong>
+Operators in C have different precedence levels, determining the order of evaluation. Here are some common operator precedences from highest to lowest:</p>
+<ul>
+<li>Postfix increment/decrement, e.g., <code>a++</code>, <code>a--</code></li>
+<li>Prefix increment/decrement, e.g., <code>++a</code>, <code>--a</code></li>
+<li>Multiplication, division, and modulus, e.g., <code>*</code>, <code>/</code>, <code>%</code></li>
+<li>Addition and subtraction, e.g., <code>+</code>, <code>-</code></li>
+<li>Relational operators, e.g., <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+<li>Equality operators, e.g., <code>==</code>, <code>!=</code></li>
+<li>Logical AND, <code>&amp;&amp;</code></li>
+<li>Logical OR, <code>||</code></li>
+<li>Assignment operators, e.g., <code>=</code>, <code>+=</code>, <code>-=</code></li>
+</ul>
+</li>
+<li><p><strong>Difference Between <code>a = 5</code> and <code>a == 5</code> in C:</strong></p>
+<ul>
+<li><code>a = 5</code> is an assignment statement, where the variable <code>a</code> is assigned the value 5.</li>
+<li><code>a == 5</code> is a comparison or equality test, checking whether the value of <code>a</code> is equal to 5. It returns a Boolean result (true or false).</li>
+</ul>
+</li>
+<li><p><strong>Declaration and Initialization of 2D Array in C:</strong>
+To declare and initialize a 2D array in C, you can use this syntax:</p>
+<pre><code class="lang-c">data<span class="hljs-emphasis">_type array_</span>name[<span class="hljs-string">rows</span>][<span class="hljs-symbol">columns</span>] = { {val1, val2, ...}, {val3, val4, ...}, ... };
+</code></pre>
+<p>Example with a 2D integer array:</p>
+<pre><code class="lang-c">int matrix[<span class="hljs-string">2</span>][<span class="hljs-symbol">3</span>] = { {1, 2, 3}, {4, 5, 6} };
+</code></pre>
+</li>
+<li><p><strong>Changing the Size of an Array in C:</strong>
+No, once an array is declared in C, its size cannot be changed. The size is fixed at declaration and cannot be altered during program execution. If a different size is needed, a new array with the desired size must be declared.</p>
+</li>
+</ol>
+<h1 id="part-b">Part - B</h1>
+<ol>
+<li><p>(a) <strong>Storage Classes in C:</strong>
+Storage classes in C define the scope, lifetime, and visibility of variables. There are four primary storage classes in C:</p>
+<ol>
+<li><strong>Auto</strong>: Variables declared as &quot;auto&quot; are created and destroyed within the function they are declared in. They are the default storage class for local variables.<pre><code class="lang-c"><span class="hljs-built_in">auto</span> <span class="hljs-built_in">int</span> x; // <span class="hljs-type">This</span> <span class="hljs-keyword">is</span> equivalent to: <span class="hljs-built_in">int</span> x;
+</code></pre>
+</li>
+<li><strong>Register</strong>: Variables declared as &quot;register&quot; are stored in CPU registers for fast access. They are suitable for frequently used variables.<pre><code class="lang-c"><span class="hljs-keyword">register</span> <span class="hljs-keyword">int</span> count;
+</code></pre>
+</li>
+<li><strong>Static</strong>: Static variables have a longer lifetime and retain their values between function calls. They are initialized only once.<pre><code class="lang-c"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+</code></pre>
+</li>
+<li><strong>Extern</strong>: Extern variables are declared in one source file but can be used in other source files. They have global visibility.<pre><code class="lang-c"><span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> globalVar;
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>(b) (i) <strong>C Program to Print Pattern:</strong>
+Here&#39;s a C program to print the pattern using looping statements:</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> i, j;
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++) {
+        <span class="hljs-keyword">for</span> (j = <span class="hljs-number">1</span>; j &lt;= i; j++) {
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>, i);
+        }
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>(ii) <strong>Programming Paradigms:</strong>
+Programming paradigms are approaches to solving problems using specific techniques. Common paradigms include:</p>
+<ul>
+<li><strong>Procedural</strong>: Focuses on functions and procedures. Example: C language.</li>
+<li><strong>Object-Oriented</strong>: Organizes data and methods into objects. Example: Java.</li>
+<li><strong>Functional</strong>: Emphasizes pure functions and immutability. Example: Haskell.</li>
+<li><strong>Imperative</strong>: Uses statements to change program state. Example: C++.</li>
+<li><strong>Declarative</strong>: Describes what to achieve without specifying how. Example: SQL.</li>
+</ul>
+</li>
+<li><p>(a) (i) <strong>Concept of Arrays in Programming:</strong>
+Arrays are data structures that store a collection of elements of the same data type. They offer benefits like efficient storage, easy access using indices, and simplified data manipulation.</p>
+<p>(ii) <strong>C Program to Count Occurrences in an Array:</strong>
+Here&#39;s a C program to count the occurrences of a number in an array:</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> arr[] = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>};
+    <span class="hljs-keyword">int</span> n = <span class="hljs-keyword">sizeof</span>(arr) / <span class="hljs-keyword">sizeof</span>(arr[<span class="hljs-number">0</span>]);
+    <span class="hljs-keyword">int</span> target = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        <span class="hljs-keyword">if</span> (arr[i] == target) {
+            count++;
+        }
+    }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"The number %d occurs %d times in the array.\n"</span>, target, count);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+</li>
+<li><p>(b) (i) <strong>C Program to Declare and Initialize a One-Dimensional Array:</strong>
+Here&#39;s a C program to declare and initialize a one-dimensional array:</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> numbers[] = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>};
+    <span class="hljs-keyword">int</span> n = <span class="hljs-keyword">sizeof</span>(numbers) / <span class="hljs-keyword">sizeof</span>(numbers[<span class="hljs-number">0</span>]);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Element %d: %d\n"</span>, i, numbers[i]);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>(ii) <strong>C Program to Find Determinant of a Matrix (2D Array):</strong>
+Calculating the determinant of a matrix involves a complex algorithm. Below is a simplified C program for a 2x2 matrix:</p>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int matrix[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>];
+    printf(<span class="hljs-string">"Enter the 2x2 matrix elements:<span class="hljs-subst">\n</span>"</span>);
+    for (int i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {
+        for (int j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">2</span>; j++) {
+            scanf(<span class="hljs-string">"%d"</span>, &amp;matrix[i][j]);
+        }
+    }
+    int determinant = (matrix[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] * matrix[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]) - (matrix[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] * matrix[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]);
+    printf(<span class="hljs-string">"Determinant: %d<span class="hljs-subst">\n</span>"</span>, determinant);
+    return <span class="hljs-number">0</span>;
+}
+</code></pre>
+</li>
+</ol>
+<h1 id="part-c">Part - C</h1>
+<ol>
+<li><p>(a) <strong>C Program to Calculate Discount Amount:</strong></p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">float</span> billAmount, discount = <span class="hljs-number">0</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Enter the bill amount: Rs. "</span>);
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%f"</span>, &amp;billAmount);
+
+    <span class="hljs-keyword">if</span> (billAmount &gt; <span class="hljs-number">10000</span>) {
+        discount = <span class="hljs-number">0.2</span> * billAmount; <span class="hljs-comment">// 20% discount</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (billAmount &gt; <span class="hljs-number">1000</span>) {
+        discount = <span class="hljs-number">0.1</span> * billAmount; <span class="hljs-comment">// 10% discount</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (billAmount &gt; <span class="hljs-number">500</span>) {
+        discount = <span class="hljs-number">0.05</span> * billAmount; <span class="hljs-comment">// 5% discount</span>
+    }
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Discount Amount: Rs. %.2f\n"</span>, discount);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Final Amount to Pay: Rs. %.2f\n"</span>, billAmount - discount);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>Explanation:</p>
+<ul>
+<li>The program takes the bill amount as input from the user.</li>
+<li>It checks the bill amount against the conditions:<ul>
+<li>If the bill amount is above Rs. 10000, a 20% discount is applied.</li>
+<li>If the bill amount is above Rs. 1000 but not above Rs. 10000, a 10% discount is applied.</li>
+<li>If the bill amount is above Rs. 500 but not above Rs. 1000, a 5% discount is applied.</li>
+</ul>
+</li>
+<li>The discount amount and the final amount to pay are calculated and displayed.</li>
+</ul>
+</li>
+</ol>
